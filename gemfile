@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+gem 'hash_miner', '~> 1.1', '>= 1.1.1'
+gem 'pry', '~> 0.14.2'
+gem 'rubocop', '~> 1.56.4'
+gem 'simple_symbolize', '~> 3.0'
