@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'csv'
 require 'simple_symbolize'
 require_relative 'env'
@@ -23,6 +25,6 @@ class CSVHandler
   end
 
   def contents
-    file[1..-1]
+    file[1..]
   end
 end

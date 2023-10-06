@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'lib/national_insurance_number'
 require_relative 'lib/national_insurance_report'
 require_relative 'lib/csv_handler'

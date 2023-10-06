@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'person'
 require_relative 'national_insurance_number'
 require_relative 'env'
@@ -7,8 +9,10 @@ require_relative 'env'
 # a tally of all national insurance numbers per country.
 class NationalInsuranceReport
   attr_accessor :people_details, :ni_report
+  attr_reader :spaces
 
-  def initialize(people_details:)
+  def initialize(people_details:, spaces: false)
+    @spaces = spaces
     @people_details = people_details
     @ni_report = create_report
   end
@@ -17,7 +21,7 @@ class NationalInsuranceReport
     LOG.info('Creating national insurance report...')
     people_details.map do |person_details|
       person = Person.new(first_names: person_details['first_names'], last_name: person_details['last_name'])
-      ni = NationalInsuranceNumber.new(person: person_details).ni_number
+      ni = NationalInsuranceNumber.new(person: person_details, spaces:).ni_number
       display_ni_numbers(name: person.full_name, ni_number: ni.to_s)
     end
   end

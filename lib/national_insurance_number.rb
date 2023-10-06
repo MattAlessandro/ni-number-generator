@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'string'
 
 # Class NationalInsuranceNumber provides a simple national insurance utility
@@ -6,15 +8,17 @@ class NationalInsuranceNumber
   UK_COUNTRIES = %w[W E S N].freeze
 
   attr_accessor :person, :ni_number
+  attr_reader :spaces
 
-  def initialize(person:)
+  def initialize(person:, spaces:)
+    @spaces = spaces
     @person = person
     @ni_number = generate_ni_number
   end
 
   private
 
-  def generate_ni_number(spaces: false)
+  def generate_ni_number
     ni_number = "#{name} #{year} #{random_code} #{country_of_birth}"
     spaces ? ni_number : ni_number.remove_all_whitespace
   end

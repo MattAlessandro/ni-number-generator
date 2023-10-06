@@ -13,7 +13,7 @@ Prerequisite:
 
 To run this application, run the following commands in the terminal:
 1. `bundle install`. This will install all the gems listed in the Gemfile with the versions specified in the Gemfile.lock
-2. `ruby app.rb` to run the app.
+2. `ruby main.rb` to run the app.
 
 Dataset of sample people is located in
 `national-insurance-number/lib/assets/people_data.csv`.
